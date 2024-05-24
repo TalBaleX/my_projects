@@ -1,0 +1,285 @@
+@import "adaptive.scss";
+body {
+  background-color: #f4f4f4;
+  font-family: "Lexend";
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 8px;
+  --time-of-animation: 2s;
+  @include _1040 {
+    font-size: 7px;
+  }
+  @include _979 {
+    font-size: 6px;
+  }
+  @include _768 {
+    font-size: 5px;
+  }
+  @include _600 {
+    font-size: 4px;
+  }
+  @include _480 {
+    font-size: 3px;
+  }
+  @include _350 {
+    font-size: 2px;
+  }
+}
+
+.container {
+  max-width: 1098px;
+  width: 85%;
+  margin: auto;
+}
+header {
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 236px;
+    animation-name: container;
+    animation-duration: var(--time-of-animation);
+    height: 100%;
+  }
+  animation-name: header;
+  animation-duration: var(--time-of-animation);
+  height: 236px;
+  .header-br {
+    height: 15px;
+    width: 100%;
+  }
+}
+@keyframes header {
+  0% {
+    height: 100vh;
+  }
+  70% {
+    height: 100vh;
+  }
+  100% {
+    height: 236px;
+  }
+}
+
+.nav {
+  font-size: 5rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 200;
+  overflow: hidden;
+
+  div::after {
+    content: "";
+    color: red;
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: #172235;
+    transition: width 0.5s;
+  }
+  div:hover::after {
+    width: 100%;
+  }
+}
+.nav.top {
+  animation-name: nav;
+  animation-duration: var(--time-of-animation);
+}
+@keyframes nav {
+  0% {
+    height: 0px;
+  }
+  70% {
+    height: 0px;
+  }
+  100% {
+    height: 50px;
+  }
+}
+
+.logo {
+  display: flex;
+  margin: 0 auto 0 auto;
+  align-self: center;
+  text-align: center;
+  font-size: 12.5rem;
+  font-family: "Medula One";
+  letter-spacing: 17px;
+}
+.logo::after {
+  content: "";
+  color: red;
+  display: block;
+  width: 0%;
+  height: 1px;
+  background-color: #172235;
+}
+
+.header-image {
+  height: 75rem;
+  background: url("/images/museum.png");
+  background-position: center;
+  .header-image-overlay {
+    background: rgb(255, 255, 255);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(10, 17, 31, 0.6) 100%
+    );
+    height: 100%;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      color: white;
+      font-size: 16.25rem;
+      font-weight: 400;
+      div {
+        text-align: right;
+      }
+    }
+  }
+}
+.info {
+  margin-top: 100px;
+  .info-header {
+    font-size: 9rem;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @include _768 {
+      flex-direction: column;
+      justify-content: space-between;
+      div:nth-child(1) {
+        order: 2;
+      }
+      div {
+        width: 100%;
+        img {
+          width: 50%;
+          margin: auto;
+          display: block;
+          height: auto;
+        }
+      }
+    }
+  }
+  button {
+    background-color: #172235;
+    color: white;
+    height: 9rem;
+    font-size: 3rem;
+    width: 30rem;
+    border-radius: 17.5px;
+    border: none;
+  }
+  .info-textbox {
+    width: 70%;
+  }
+  .info-text {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  img {
+    height: 75rem;
+    border-radius: 12px;
+  }
+  .info-after-part {
+    height: 12.5rem;
+  }
+}
+
+.collage {
+  .images {
+    display: grid;
+    height: 188rem;
+    gap: 30px;
+    background-color: white;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 28px;
+    border-radius: 12px;
+    transition: opacity 2s;
+    opacity: 0;
+    .first-image {
+      background: url("/images/fst_image.png");
+    }
+    .second-image {
+      background: url("/images/snd_image.png");
+    }
+
+    .image {
+      background-position: center;
+      background-size: cover;
+      border-radius: 12px;
+    }
+  }
+  .images.transition {
+    opacity: 1;
+  }
+}
+.prefooter-line {
+  background-color: #d2d2d7;
+  height: 1px;
+}
+.footer {
+  margin-top: 25rem;
+  .logo {
+    font-size: 7rem;
+    letter-spacing: 17%;
+  }
+  .footer-boxes {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    .footer-box {
+      width: 33%;
+      height: 100%;
+      justify-content: center;
+      align-content: center;
+      .nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      .socials {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 80%;
+
+        .social {
+          background-color: #d9d9d9;
+          border-radius: 50%;
+          // width: 7.75rem;
+          // height: 7.75rem;
+          padding: 1.8rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 3.75rem;
+            height: 3.75rem;
+          }
+        }
+      }
+    }
+    .footer-box:last-child {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}
+button,
+.social {
+  transition: 0.5s;
+}
+button:hover,
+.social:hover {
+  filter: brightness(60%);
+}
