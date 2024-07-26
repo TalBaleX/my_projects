@@ -11,19 +11,26 @@
     <header>
       <div class="container">
         <div class="nav top">
-          <div>home</div>
-          <div>available art</div>
-          <div>about me</div>
-          <div>contacts</div>
+          <div class="active-nav"><a href="/index.html">home</a></div>
+          <div>
+            <a href="/available-art.html">available art</a>
+          </div>
+          <div><a href="/about-me.html">about me</a></div>
+          <div><a href="contacts.html">contacts</a></div>
         </div>
         <div class="header-br"></div>
-        <div class="logo">OLA STEIN</div>
+        <div class="logo"><a href="/index.html">OLA STEIN</a></div>
+        <div class="burger" id="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
       </div>
     </header>
     <div class="header-image">
       <div class="header-image-overlay">
         <div class="container">
-          <div>i'm</div>
+          <div>I'm</div>
           <div>
             <div>echt</div>
             <div>crazy</div>
@@ -57,7 +64,7 @@
           <br />
           <br />
           <br />
-          <button>READ MORE</button>
+          <a href="/about-me.html"><button>READ MORE</button></a>
         </div>
         <div>
           <img id="person" src="./images/person.png" alt="" />
@@ -84,33 +91,43 @@
         <div class="prefooter-line"></div>
         <div class="footer-boxes">
           <div class="footer-box">
-            <div class="logo">OLA STEIN</div>
+            <div class="unanimated logo">
+              <a href="/index.html">OLA STEIN</a>
+            </div>
           </div>
           <div class="footer-box">
             <div class="nav">
-              <div>home</div>
-              <div>available art</div>
-              <div>about me</div>
-              <div>contacts</div>
+              <div class="active-nav"><a href="/index.html">home</a></div>
+              <div>
+                <a href="/available-art.html">available art</a>
+              </div>
+              <div><a href="/about-me.html">about me</a></div>
+              <div><a href="contacts.html">contacts</a></div>
             </div>
           </div>
           <div class="footer-box">
             <div class="socials">
               <div class="social">
-                <img src="./images/icons/insta.svg" alt="" />
+                <a href="https://www.instagram.com/" target="_blank"
+                  ><img src="./images/icons/insta.svg" alt=""
+                /></a>
               </div>
               <div class="social">
-                <img src="./images/icons/facebook.svg" alt="" />
+                <a href="https://www.facebook.com/" target="_blank">
+                  <img src="./images/icons/facebook.svg" alt=""
+                /></a>
               </div>
               <div class="social">
-                <img src="./images/icons/mail.svg" alt="" />
+                <a href="https://mail.google.com/" target="_blank">
+                  <img src="./images/icons/mail.svg" alt="" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <script src="scripts/script.js"></script>
+    <script src="scripts/box_animation.js"></script>
   </body>
 </html>

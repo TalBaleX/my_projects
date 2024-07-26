@@ -1,0 +1,149 @@
+[
+    {
+        "id": 1,
+        "link": "./images/fst_image.png",
+        "title": "Kitty",
+        "available": true,
+        "price": 90
+    },
+    {
+        "id": 2,
+        "link": "./images/snd_image.png",
+        "title": "Cursor",
+        "available": true,
+        "price": 60
+    },
+    {
+        "id": 3,
+        "link": "./images/fst_image.png",
+        "title": "Kitty",
+        "available": true,
+        "price": 80
+    },
+    {
+        "id": 4,
+        "link": "./images/fst_image.png",
+        "title": "Kitty",
+        "available": true,
+        "price": 40
+    },
+    {
+        "id": 5,
+        "link": "./images/snd_image.png",
+        "title": "Cursor",
+        "available": false,
+        "price": 70
+    },
+    {
+        "id": 6,
+        "link": "./images/fst_image.png",
+        "title": "Kitty",
+        "available": true,
+        "price": 1488
+    },
+    {
+        "id": 7,
+        "link": "./images/fst_image.png",
+        "title": "Gadget",
+        "available": true,
+        "price": 100
+    },
+    {
+        "id": 8,
+        "link": "./images/snd_image.png",
+        "title": "Widget",
+        "available": true,
+        "price": 75
+    },
+    {
+        "id": 9,
+        "link": "./images/fst_image.png",
+        "title": "Device",
+        "available": true,
+        "price": 120
+    },
+    {
+        "id": 10,
+        "link": "./images/snd_image.png",
+        "title": "Tool",
+        "available": true,
+        "price": 85
+    },
+    {
+        "id": 11,
+        "link": "./images/fst_image.png",
+        "title": "Gizmo",
+        "available": true,
+        "price": 95
+    },
+    {
+        "id": 12,
+        "link": "./images/snd_image.png",
+        "title": "Doodad",
+        "available": true,
+        "price": 60
+    },
+    {
+        "id": 13,
+        "link": "./images/fst_image.png",
+        "title": "Thingamajig",
+        "available": true,
+        "price": 110
+    },
+    {
+        "id": 14,
+        "link": "./images/snd_image.png",
+        "title": "Contraption",
+        "available": true,
+        "price": 130
+    },
+    {
+        "id": 15,
+        "link": "./images/fst_image.png",
+        "title": "Apparatus",
+        "available": false,
+        "price": 140
+    },
+    {
+        "id": 16,
+        "link": "./images/snd_image.png",
+        "title": "Mechanism",
+        "available": true,
+        "price": 70
+    },
+    {
+        "id": 17,
+        "link": "./images/fst_image.png",
+        "title": "Machine",
+        "available": true,
+        "price": 115
+    },
+    {
+        "id": 18,
+        "link": "./images/snd_image.png",
+        "title": "Implement",
+        "available": true,
+        "price": 90
+    },
+    {
+        "id": 19,
+        "link": "./images/fst_image.png",
+        "title": "Gadgetry",
+        "available": true,
+        "price": 145
+    },
+    {
+        "id": 20,
+        "link": "./images/snd_image.png",
+        "title": "Whatchamacallit",
+        "available": false,
+        "price": 150
+    },
+    {
+        "id": 21,
+        "link": "./images/fst_image.png",
+        "title": "Doohickey",
+        "available": true,
+        "price": 80
+    }
+]

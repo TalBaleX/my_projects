@@ -1,3 +1,25 @@
+@mixin _2560 {
+  @media (max-width: 2560px) {
+    @content;
+  }
+  /* 
+    @include _2560 {
+
+    }
+  */
+}
+
+@mixin _1440 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+  /* 
+    @include _1440 {
+
+    }
+  */
+}
+
 @mixin _1170 {
   @media (max-width: 1170px) {
     @content;

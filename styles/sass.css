@@ -1,13 +1,38 @@
+.unanimated {
+  animation-duration: 0ms !important;
+}
+
 body {
   background-color: #f4f4f4;
   font-family: "Lexend";
   margin: 0;
   padding: 0;
 }
+body a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  cursor: pointer;
+  transition: 2s;
+}
+body button {
+  cursor: pointer;
+}
 
 :root {
   font-size: 8px;
   --time-of-animation: 2s;
+  --logo-animation: 0px;
+  /* 
+    @include _2560 {
+
+    }
+  */
+  /* 
+    @include _1440 {
+
+    }
+  */
   /* 
     @include _1040 {
 
@@ -39,6 +64,16 @@ body {
     }
   */
 }
+@media (max-width: 2560px) {
+  :root {
+    font-size: 10px;
+  }
+}
+@media (max-width: 1440px) {
+  :root {
+    font-size: 9px;
+  }
+}
 @media (max-width: 1040px) {
   :root {
     font-size: 7px;
@@ -51,22 +86,22 @@ body {
 }
 @media (max-width: 768px) {
   :root {
-    font-size: 5px;
+    font-size: 6px;
   }
 }
 @media (max-width: 600px) {
   :root {
-    font-size: 4px;
+    font-size: 6px;
   }
 }
 @media (max-width: 480px) {
   :root {
-    font-size: 3px;
+    font-size: 5px;
   }
 }
 @media (max-width: 350px) {
   :root {
-    font-size: 2px;
+    font-size: 4px;
   }
 }
 
@@ -79,20 +114,38 @@ body {
 header {
   animation-name: header;
   animation-duration: var(--time-of-animation);
-  height: 236px;
+  height: 30rem;
 }
 header .container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 236px;
-  animation-name: container;
-  animation-duration: var(--time-of-animation);
   height: 100%;
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 header .header-br {
-  height: 15px;
+  height: 1.5rem;
   width: 100%;
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  header .header-br {
+    display: none;
+  }
 }
 
 @keyframes header {
@@ -103,7 +156,7 @@ header .header-br {
     height: 100vh;
   }
   100% {
-    height: 236px;
+    height: 30rem;
   }
 }
 .nav {
@@ -112,8 +165,12 @@ header .header-br {
   justify-content: space-between;
   font-weight: 200;
   overflow: hidden;
+  color: rgb(83, 83, 83);
 }
-.nav div::after {
+.nav .active-nav {
+  color: black;
+}
+.nav a::after {
   content: "";
   color: red;
   display: block;
@@ -122,15 +179,67 @@ header .header-br {
   background-color: #172235;
   transition: width 0.5s;
 }
-.nav div:hover::after {
+.nav a:hover::after {
   width: 100%;
 }
 
 .nav.top {
   animation-name: nav;
   animation-duration: var(--time-of-animation);
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  .nav.top {
+    display: none;
+  }
 }
 
+.nav.mobile {
+  right: 0;
+  top: 0;
+  position: fixed;
+  z-index: 200;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  animation-duration: 0.5s;
+  animation-name: nav-mobile;
+  overflow: scroll;
+}
+.nav.mobile .container-nav-mobile {
+  padding: 3rem 10rem;
+}
+.nav.mobile .container-nav-mobile div {
+  text-align: center;
+  font-size: 6rem;
+  min-width: 50%;
+  min-height: 10vh;
+}
+.nav.mobile .container-nav-mobile div + div {
+  margin-top: 30px;
+}
+.nav.mobile .container-nav-mobile a::after {
+  width: 100%;
+  background-color: #d2d2d7;
+  margin-top: 5px;
+}
+.nav.mobile .container-nav-mobile a:hover {
+  opacity: 0.6;
+}
+
+@keyframes nav-mobile {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes nav {
   0% {
     height: 0px;
@@ -139,7 +248,7 @@ header .header-br {
     height: 0px;
   }
   100% {
-    height: 50px;
+    height: 6.25rem;
   }
 }
 .logo {
@@ -147,11 +256,37 @@ header .header-br {
   margin: 0 auto 0 auto;
   align-self: center;
   text-align: center;
-  font-size: 12.5rem;
+  font-size: 9rem;
   font-family: "Medula One";
-  letter-spacing: 17px;
+  letter-spacing: 2rem;
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  .logo {
+    position: relative;
+    margin: 0;
+    animation: moveLogo 2s forwards;
+  }
 }
 
+@keyframes moveLogo {
+  0% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  70% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 0%;
+    transform: translateX(0%);
+  }
+}
 .logo::after {
   content: "";
   color: red;
@@ -161,10 +296,64 @@ header .header-br {
   background-color: #172235;
 }
 
+.burger {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 6.5rem;
+  align-self: center;
+  animation-name: burger;
+  animation-duration: var(--time-of-animation);
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+.burger .line {
+  width: 8.5rem;
+  height: 0.8rem;
+  background-color: black;
+  border-radius: 0.7rem;
+  transition: 0.5s;
+}
+@media (max-width: 600px) {
+  .burger {
+    display: flex;
+  }
+}
+
+.burger:hover .line {
+  background-color: rgb(152, 152, 152);
+}
+
+@keyframes burger {
+  0% {
+    height: 0;
+  }
+  70% {
+    height: 0;
+  }
+  100% {
+    height: 6.5rem;
+  }
+}
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.462);
+}
+
 .header-image {
   height: 75rem;
   background: url("/images/museum.png");
   background-position: center;
+  background-size: cover;
 }
 .header-image .header-image-overlay {
   background: rgb(255, 255, 255);
@@ -177,7 +366,7 @@ header .header-br {
   align-items: center;
   height: 100%;
   color: white;
-  font-size: 16.25rem;
+  font-size: 12rem;
   font-weight: 400;
 }
 .header-image .header-image-overlay .container div {
@@ -188,7 +377,7 @@ header .header-br {
   margin-top: 100px;
 }
 .info .info-header {
-  font-size: 9rem;
+  font-size: 8rem;
 }
 .info .container {
   display: flex;
@@ -198,6 +387,12 @@ header .header-br {
 
     }
   */
+}
+.info .container .info-textbox {
+  width: 80%;
+}
+.info .container div {
+  width: 50%;
 }
 @media (max-width: 768px) {
   .info .container {
@@ -220,21 +415,18 @@ header .header-br {
 .info button {
   background-color: #172235;
   color: white;
-  height: 9rem;
+  height: 10.2rem;
   font-size: 3rem;
-  width: 30rem;
-  border-radius: 17.5px;
+  width: 34rem;
+  border-radius: 2.1875rem;
   border: none;
 }
-.info .info-textbox {
-  width: 70%;
-}
 .info .info-text {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 300;
 }
 .info img {
-  height: 75rem;
+  width: 100%;
   border-radius: 12px;
 }
 .info .info-after-part {
@@ -244,14 +436,14 @@ header .header-br {
 .collage .images {
   display: grid;
   height: 188rem;
-  gap: 30px;
   background-color: white;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  padding: 28px;
-  border-radius: 12px;
+  padding: 5rem;
+  border-radius: 1.5rem;
   transition: opacity 2s;
   opacity: 0;
+  gap: 3.5rem;
 }
 .collage .images .first-image {
   background: url("/images/fst_image.png");
@@ -262,7 +454,7 @@ header .header-br {
 .collage .images .image {
   background-position: center;
   background-size: cover;
-  border-radius: 12px;
+  border-radius: 1.5rem;
 }
 .collage .images.transition {
   opacity: 1;
@@ -277,19 +469,41 @@ header .header-br {
   margin-top: 25rem;
 }
 .footer .logo {
-  font-size: 7rem;
-  letter-spacing: 17%;
+  font-size: 6rem;
+  letter-spacing: 1.5rem;
+}
+.footer .footer-box:nth-child(2) {
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  .footer .footer-box:nth-child(2) {
+    display: none;
+  }
 }
 .footer .footer-boxes {
   display: flex;
   justify-content: space-between;
-  height: 300px;
+  height: 37.5rem;
 }
 .footer .footer-boxes .footer-box {
   width: 33%;
   height: 100%;
   justify-content: center;
   align-content: center;
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  .footer .footer-boxes .footer-box {
+    width: 50%;
+  }
 }
 .footer .footer-boxes .footer-box .nav {
   flex-direction: column;
@@ -299,7 +513,19 @@ header .header-br {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 80%;
+  width: 85%;
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  .footer .footer-boxes .footer-box .socials {
+    width: 100%;
+    justify-content: space-evenly;
+    justify-self: flex-end;
+  }
 }
 .footer .footer-boxes .footer-box .socials .social {
   background-color: #d9d9d9;
@@ -308,10 +534,21 @@ header .header-br {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 
+    @include _600 {
+
+    }
+  */
 }
 .footer .footer-boxes .footer-box .socials .social img {
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 4rem;
+  height: 4rem;
+}
+@media (max-width: 600px) {
+  .footer .footer-boxes .footer-box .socials .social img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
 }
 .footer .footer-boxes .footer-box:last-child {
   display: flex;
