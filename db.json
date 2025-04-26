@@ -1,0 +1,48 @@
+{
+  "hotels": [
+    {
+      "id": "cabbe15ad425bedadc136d2f",
+      "name": "Harvey LLC",
+      "city": "Deerfield Beach",
+      "phone_number": "1-881-290-7223 x06856",
+      "photo": "https://picsum.photos/seed/lr63x2fK/140/140"
+    },
+    {
+      "id": "1a4e74ebcb7b418e4ea2eb54",
+      "name": "Swaniawski - Hahn",
+      "city": "Fort Janicemouth",
+      "phone_number": "1-511-253-0859 x4467",
+      "photo": "https://picsum.photos/seed/ij5XEk8/140/140"
+    },
+    {
+      "id": "2e14f47f4bc8bdaa075a9eec",
+      "name": "Swaniawski Group",
+      "city": "North Mireyaboro",
+      "phone_number": "(776) 591-8052 x22292",
+      "photo": "https://picsum.photos/seed/A7uzVK/140/140"
+    },
+    {
+      "id": "8a402c42fd7ebb3b32865e3a",
+      "name": "Murphy, Ebert and Heidenreich",
+      "city": "Cristville",
+      "phone_number": "838.335.7844",
+      "photo": "https://picsum.photos/seed/tX1B34ILJ/140/140"
+    },
+    {
+      "id": "4adfbecbf12a49cd1e8759ec",
+      "name": "Rohan LLC",
+      "city": "Vernonview",
+      "phone_number": "280.975.2720 x666",
+      "photo": "https://picsum.photos/seed/9V4ehdVu/140/140"
+    },
+    {
+      "id": "25f25e1ea22df31eea83b6ab",
+      "name": "Schmitt - Harber",
+      "city": "Maximillianview",
+      "phone_number": "(517) 721-6225 x6758",
+      "photo": "https://picsum.photos/seed/cj5ukshkQa/140/140"
+    }
+  ],
+  "users": [],
+  "bookings": []
+}
