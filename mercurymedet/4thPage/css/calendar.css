@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+.calendar-wrapper {
+  position: relative;
+  width: fit-content;
+}
+.calendar-toggle {
+  padding: 10px 14px;
+  background: rgba(232, 238, 244, 1);
+  border: 1px solid #e3e7ee;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.chevron {
+  border: solid #666;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-left: 6px;
+  transform: rotate(45deg);
+}
+.calendar {
+  position: fixed;
+  z-index: 1000;
+  background: rgba(232, 238, 244, 1);
+  width: 260px;
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid #e3e7ee;
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.08);
+  animation: fade 0.15s ease-in-out;
+  margin-bottom: env(safe-area-inset-bottom);
+}
+#dateInput {
+  color: rgba(27, 37, 86, 1);
+}
+.hidden {
+  display: none;
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 510;
+}
+.nav {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.nav:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.weekdays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  text-align: center;
+  min-height: calc(1 * 34px);
+}
+.weekdays span {
+  color: #727987;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.days div {
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 274;
+  border-radius: 30%;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.days div:hover {
+  color: rgba(143, 120, 88, 1);
+  border: rgba(143, 120, 88, 1) solid 1px;
+  box-sizing: border-box;
+}
+.day-selected {
+  background: rgba(27, 37, 86, 1);
+  color: white;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.archive-open .calendar {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.archive-open .calendar.hidden {
+  display: block;
+} /* убираем toggle-логику визуально */
+.archive-open .calendar-toggle {
+  display: none;
+} /* визуал как в Figma */
+.archive-calendar .calendar {
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 12px;
+  box-shadow: none;
+  border: 1px solid #e5e9f2;
+}
+.news-sidebar .calendar-wrapper {
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .news-header .news-archive {
+    display: flex;
+  }
+}

@@ -1,0 +1,39 @@
+@import "adaptive.scss";
+
+.container.bio {
+  width: 70%;
+  display: flex;
+  @include _768 {
+    width: 90%;
+    flex-direction: column;
+  }
+  div {
+    width: 50%;
+    @include _768 {
+      width: 100%;
+    }
+    .person-image {
+      background-image: url("/images/person.png");
+      width: 90%;
+      border-radius: 2.5rem;
+      margin-top: 5rem;
+      @include _768 {
+        width: 100%;
+      }
+    }
+    .about-text {
+      display: block;
+      font-size: 3rem;
+
+      @include _768 {
+        padding-top: 6rem;
+        font-size: 5rem;
+      }
+    }
+
+    .about-text::first-letter {
+      color: rgb(206, 52, 78);
+      font-size: 6rem;
+    }
+  }
+}

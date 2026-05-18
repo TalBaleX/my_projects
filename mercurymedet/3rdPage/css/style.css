@@ -1,0 +1,387 @@
+:root {
+  --font-main: "Inter", sans-serif;
+}
+
+/* базовые */
+body {
+  font-family: var(--font-main);
+  color: #0a0a0a;
+}
+
+.container {
+  max-width: 1134px;
+  padding: 0 30px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  color: #1f2f5c;
+}
+
+a {
+  text-decoration: none;
+  color: #606060;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.clients-wrap {
+  background: #eef3f8;
+}
+
+.client-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 16px;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  font-weight: 400;
+}
+
+.client-icon {
+  width: 48px;
+  height: 48px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-weight: 600;
+}
+
+.clients-slider {
+  position: relative;
+}
+
+.clients-viewport {
+  overflow: hidden;
+}
+
+.clients-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-columns: calc(25% - 18px);
+  gap: 24px;
+  transition: transform 0.4s ease;
+}
+
+.clients-arrow {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ПК + планшет */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  transition: transform 0.4s ease;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  color: rgba(54, 65, 83, 1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.review-user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.review-user img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.review-name {
+  font-weight: 500;
+}
+
+.review-position {
+  font-size: 14px;
+  color: rgba(74, 85, 101, 1);
+}
+
+.review-company {
+  font-size: 14px;
+  color: #2563eb;
+}
+
+.review-stars {
+  color: #f5b301;
+  letter-spacing: 2px;
+}
+
+/* REVIEWS SLIDER */
+.reviews-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.45s ease;
+}
+
+.review-card {
+  flex: 0 0 calc(25% - 18px); /* 4 карточки */
+}
+
+/* мобильный */
+@media (max-width: 768px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .review-card {
+    flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 1140px) and (min-width: 769px) {
+  .clients-wrap .carousel-controls {
+    display: none;
+  }
+
+  .review-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+@media (min-width: 1140px) {
+  .reviews-viewport {
+    overflow: hidden;
+  }
+
+  .reviews-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50%;
+    grid-template-rows: repeat(2, auto);
+    gap: 24px;
+    transition: transform 0.45s ease;
+  }
+
+  .review-card {
+    width: 100%;
+  }
+}
+
+/* кейсы */
+.case-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  height: 100%;
+  color: rgba(27, 37, 86, 1);
+}
+
+.case-card small {
+  color: rgba(113, 113, 130, 1);
+}
+
+.case-img {
+  aspect-ratio: 12 / 9;
+  object-fit: cover;
+}
+
+.case-status {
+  font-weight: 400 !important;
+  line-height: 1.2;
+}
+
+.badge,
+.badge * {
+  font-weight: 400 !important;
+  letter-spacing: normal;
+}
+
+.badge-place,
+.case-status {
+  font-weight: 400 !important;
+}
+
+.case-status {
+  background: #f5f0e8;
+  color: #8f7858;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.badge-place {
+  background: rgba(143, 120, 88, 1);
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+#casesCarousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.cases-viewport {
+  overflow: hidden;
+}
+
+.cases-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.45s ease;
+}
+
+.case-slide {
+  flex: 0 0 calc(33.333% - 16px);
+}
+
+/* disabled arrows */
+.carousel-control-prev.disabled,
+.carousel-control-next.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* чтобы hover не срабатывал */
+.carousel-control-prev.disabled:hover,
+.carousel-control-next.disabled:hover {
+  background: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: none;
+}
+
+/* планшет */
+@media (max-width: 1140px) {
+  .case-slide {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+/* телефон */
+@media (max-width: 768px) {
+  .case-slide {
+    flex: 0 0 100%;
+  }
+}
+
+/* стрелки */
+.carousel-control-prev,
+.carousel-control-next {
+  position: static !important;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(4px);
+  color: rgba(236, 104, 1, 1);
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.15s ease, border-color 0.25s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-control-prev:active,
+.carousel-control-next:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.carousel-control-prev:focus-visible,
+.carousel-control-next:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(236, 104, 1, 0.35);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none !important;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.clients-rotator,
+#reviewsCarousel {
+  position: relative;
+}
+
+/* адаптив */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 1139px) {
+  #casesCarousel .carousel-controls {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1230px) {
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    pointer-events: auto;
+    background: #fff !important;
+  }
+
+  .carousel-control-prev {
+    margin-left: -100px;
+  }
+
+  .carousel-control-next {
+    margin-right: -100px;
+  }
+}

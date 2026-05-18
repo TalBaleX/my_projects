@@ -1,0 +1,151 @@
+:root {
+  --font-main: "Inter", sans-serif;
+  --card-border: #e5e9f2;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: #0a0a0a;
+}
+
+a {
+  text-decoration: none;
+  color: #606060;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* ===== CONTAINERS ===== */
+.container {
+  max-width: 1136px;
+}
+
+@media (max-width: 991px) {
+  .tablet-container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ===== TITLES ===== */
+.section-title {
+  text-align: center;
+  font-weight: 400;
+  color: #1b2556;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* ===== COURSE CARD ===== */
+.course-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 22px;
+  height: 100%;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.course-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.course-card h6 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+  margin: 0;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.course-card .d-flex {
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge-type {
+  background: #eceef2;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+.course-desc {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 12px;
+}
+
+.course-info li {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+/* ===== FAQ ===== */
+.faq-section {
+  background: #eff6ff;
+  padding: 50px 0;
+}
+.accordion-item {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 3px;
+}
+.accordion-button {
+  font-weight: 500;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #8f7858;
+  color: white;
+}
+
+.accordion-icon {
+  transition: transform 0.2s ease-in-out;
+  font-size: 0.875rem;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-button::after {
+  display: none !important;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 22px;
+    margin: 25px 0 20px;
+  }
+
+  .course-card {
+    padding: 16px;
+  }
+
+  .course-card h6 {
+    font-size: 16px;
+  }
+
+  .course-desc,
+  .accordion-body {
+    font-size: 13px;
+  }
+}

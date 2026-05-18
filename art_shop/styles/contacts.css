@@ -1,0 +1,51 @@
+.container.contacts {
+  width: 45%;
+  /* 
+    @include _600 {
+
+    }
+  */
+}
+@media (max-width: 600px) {
+  .container.contacts {
+    width: 90%;
+  }
+}
+.container.contacts form .contacts-input {
+  border-radius: 1rem;
+  font-family: "Lexend";
+}
+.container.contacts form .contacts-input + .contacts-input {
+  margin-top: 6rem;
+}
+.container.contacts form button {
+  width: auto;
+  margin: auto;
+  display: block;
+  background-color: rgb(206, 52, 78);
+  color: white;
+  border: none;
+  font-size: 3rem;
+  padding: 2rem 2.5rem;
+  border-radius: 0.8rem;
+}
+.container.contacts form input,
+.container.contacts form select,
+.container.contacts form textarea {
+  display: block;
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2.5rem;
+  height: 7rem;
+  padding: 1.5rem;
+  border: 0.3px solid black;
+  border-left: 0.8px solid black;
+  color: black;
+  background-color: white;
+}
+.container.contacts form textarea {
+  resize: vertical;
+  height: 6.25rem;
+  min-height: 100px;
+}/*# sourceMappingURL=contacts.css.map */

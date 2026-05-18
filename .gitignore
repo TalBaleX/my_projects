@@ -2,3 +2,9 @@
 node_modules/
 .vscode
 .idea
+.env
+dist/
+build/
+coverage/
+*.log
+*.tmp

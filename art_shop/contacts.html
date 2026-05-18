@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/sass.css" />
+    <link rel="stylesheet" href="./styles/contacts.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <header class="unanimated">
+      <div class="container">
+        <div class="nav top unanimated">
+          <div><a href="/index.html">home</a></div>
+          <div>
+            <a href="/available-art.html">available art</a>
+          </div>
+          <div><a href="/about-me.html">about me</a></div>
+          <div class="active-nav"><a href="contacts.html">contacts</a></div>
+        </div>
+        <div class="header-br"></div>
+        <div class="unanimated logo"><a href="/index.html">OLA STEIN</a></div>
+
+        <div class="unanimated burger" id="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container contacts">
+      <form action="" method="post">
+        <input class="contacts-input" type="text" placeholder="Name" />
+        <input class="contacts-input" type="email" placeholder="Email" />
+        <select class="contacts-input" name="topics" id="topic-select">
+          <option value="">-- Select Topic--</option>
+          <option value="order">Order of works</option>
+          <option value="business">Business</option>
+          <option value="reviews">Reviews / Critic</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea
+          class="contacts-input"
+          name="message"
+          id="message"
+          placeholder="Message"
+        ></textarea>
+        <button class="contacts-input" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="prefooter-line"></div>
+        <div class="footer-boxes">
+          <div class="footer-box">
+            <div class="unanimated logo">
+              <a href="/index.html">OLA STEIN</a>
+            </div>
+          </div>
+          <div class="footer-box">
+            <div class="nav">
+              <div><a href="/index.html">home</a></div>
+              <div>
+                <a href="/available-art.html">available art</a>
+              </div>
+              <div class="active-nav">
+                <a href="/about-me.html">about me</a>
+              </div>
+              <div class="active-nav"><a href="contacts.html">contacts</a></div>
+            </div>
+          </div>
+          <div class="footer-box">
+            <div class="socials">
+              <div class="social">
+                <a href="https://www.instagram.com/" target="_blank"
+                  ><img src="./images/icons/insta.svg" alt=""
+                /></a>
+              </div>
+              <div class="social">
+                <a href="https://www.facebook.com/" target="_blank">
+                  <img src="./images/icons/facebook.svg" alt=""
+                /></a>
+              </div>
+              <div class="social">
+                <a href="https://mail.google.com/" target="_blank">
+                  <img src="./images/icons/mail.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="scripts/script.js"></script>
+    </div>
+  </body>
+</html>

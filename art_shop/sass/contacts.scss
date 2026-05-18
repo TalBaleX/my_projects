@@ -1,0 +1,49 @@
+@import "adaptive.scss";
+
+.container.contacts {
+  width: 45%;
+  @include _600 {
+    width: 90%;
+  }
+  form {
+    .contacts-input {
+      border-radius: 1rem;
+      font-family: "Lexend";
+    }
+    .contacts-input + .contacts-input {
+      margin-top: 6rem;
+    }
+    button {
+      width: auto;
+      margin: auto;
+      display: block;
+      background-color: rgb(206, 52, 78);
+      color: white;
+      border: none;
+      font-size: 3rem;
+      padding: 2rem 2.5rem;
+      border-radius: 0.8rem;
+    }
+    input,
+    select,
+    textarea {
+      display: block;
+      margin: auto;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 2.5rem;
+      height: 7rem;
+      padding: 1.5rem;
+      border: 0.3px solid black;
+      border-left: 0.8px solid black;
+      color: black;
+      background-color: white;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 6.25rem;
+      min-height: 100px;
+    }
+  }
+}

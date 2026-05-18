@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Новости</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/calendar.css" />
+  </head>
+  <body>
+    <section class="news-section">
+      <div
+        class="news-container container container-xl tablet-container mobile-container"
+      >
+        <!-- Хлебные крошки -->
+        <nav class="breadcrumbs">
+          <a href="#">Главная</a> | <a href="#">Новости</a>
+        </nav>
+        <!-- Шапка -->
+        <div class="news-header justify-content-between mb-3 mb-sm-0">
+          <h1 class="news-title">Архив новостей</h1>
+          <div class="news-archive mb-sm-5">
+            <span>Архив новостей</span>
+            <div class="calendar-wrapper">
+              <button class="calendar-toggle" id="toggleBtn">
+                <span id="dateInput">20/10/2025</span>
+                <span class="chevron"></span>
+              </button>
+              <div class="calendar hidden" data-calendar data-type="header">
+                <div class="calendar-header">
+                  <button class="nav prev" data-prev>‹</button>
+                  <div class="month-title" data-title></div>
+                  <button class="nav next" data-next>›</button>
+                </div>
+
+                <div class="weekdays">
+                  <span>Пн</span><span>Вт</span><span>Ср</span> <span>Чт</span
+                  ><span>Пт</span><span>Сб</span><span>Вс</span>
+                </div>
+
+                <div class="days" data-days></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <small class="d-lg-block mt-5 mb-3">
+          <i
+            class="bi bi-calendar-fill"
+            style="color: rgba(176, 176, 176, 1)"
+          ></i>
+          22.07.2022
+        </small>
+        <!-- ОСНОВНОЙ LAYOUT: 2 колонки контента + 1 сайдбар -->
+        <div class="news-layout">
+          <!-- ЛЕВАЯ ЧАСТЬ: новости (2 колонки) -->
+          <div class="news-grid">
+            <!-- Карточка -->
+            <article class="news-card">
+              <img src="src/image.png" alt="" />
+              <div class="news-card-body">
+                <span class="news-date"
+                  ><i class="bi bi-calendar4"></i> 20 октября 2025</span
+                >
+                <span class="news-tag">Обучение</span>
+                <h3>Открыт набор на курсы охранников 6-го разряда</h3>
+                <p>
+                  Начинается новый набор на курсы подготовки охранников.
+                  Обучение включает теоретическую...
+                </p>
+                <a href="#">Читать далее →</a>
+              </div>
+            </article>
+            <!-- Копии карточек -->
+            <article class="news-card">
+              <img src="src/image.png" alt="" />
+              <div class="news-card-body">
+                <span class="news-date"
+                  ><i class="bi bi-calendar4"></i> 20 октября 2025</span
+                >
+                <span class="news-tag">Обучение</span>
+                <h3>Открыт набор на курсы охранников 6-го разряда</h3>
+                <p>
+                  Начинается новый набор на курсы подготовки охранников.
+                  Обучение включает теоретическую...
+                </p>
+                <a href="#">Читать далее →</a>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="src/image.png" alt="" />
+              <div class="news-card-body">
+                <span class="news-date"
+                  ><i class="bi bi-calendar4"></i> 20 октября 2025</span
+                >
+                <span class="news-tag">Обучение</span>
+                <h3>Открыт набор на курсы охранников 6-го разряда</h3>
+                <p>
+                  Начинается новый набор на курсы подготовки охранников.
+                  Обучение включает теоретическую...
+                </p>
+                <a href="#">Читать далее →</a>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="src/image.png" alt="" />
+              <div class="news-card-body">
+                <span class="news-date"
+                  ><i class="bi bi-calendar4"></i> 20 октября 2025</span
+                >
+                <span class="news-tag">Обучение</span>
+                <h3>Открыт набор на курсы охранников 6-го разряда</h3>
+                <p>
+                  Начинается новый набор на курсы подготовки охранников.
+                  Обучение включает теоретическую...
+                </p>
+                <a href="#">Читать далее →</a>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="src/image.png" alt="" />
+              <div class="news-card-body">
+                <span class="news-date"
+                  ><i class="bi bi-calendar4"></i> 20 октября 2025</span
+                >
+                <span class="news-tag">Обучение</span>
+                <h3>Открыт набор на курсы охранников 6-го разряда</h3>
+                <p>
+                  Начинается новый набор на курсы подготовки охранников.
+                  Обучение включает теоретическую...
+                </p>
+                <a href="#">Читать далее →</a>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="src/image.png" alt="" />
+              <div class="news-card-body">
+                <span class="news-date"
+                  ><i class="bi bi-calendar4"></i> 20 октября 2025</span
+                >
+                <span class="news-tag">Обучение</span>
+                <h3>Открыт набор на курсы охранников 6-го разряда</h3>
+                <p>
+                  Начинается новый набор на курсы подготовки охранников.
+                  Обучение включает теоретическую...
+                </p>
+                <a href="#">Читать далее →</a>
+              </div>
+            </article>
+          </div>
+          <!-- ПРАВАЯ ЧАСТЬ: сайдбар -->
+          <aside class="news-sidebar">
+            <div class="archive-card archive-open">
+              <div class="archive-header">
+                <div class="archive-text">
+                  <span class="fw-normal"
+                    ><i
+                      style="color: rgba(143, 120, 88, 1)"
+                      class="bi bi-archive"
+                    ></i>
+                    Архив новостей</span
+                  >
+                  <p style="color: rgba(113, 113, 130, 1)">
+                    Выберите дату, месяц или год для просмотра новостей
+                  </p>
+                </div>
+              </div>
+              <!-- КАЛЕНДАРЬ: ВСЕГДА ОТКРЫТ -->
+              <div class="calendar-wrapper archive-calendar">
+                <div class="calendar" data-calendar data-type="sidebar">
+                  <div class="calendar-header">
+                    <button class="nav prev" data-prev>‹</button>
+                    <div class="month-title" data-title></div>
+                    <button class="nav next" data-next>›</button>
+                  </div>
+
+                  <div class="weekdays">
+                    <span>Пн</span><span>Вт</span><span>Ср</span> <span>Чт</span
+                    ><span>Пт</span><span>Сб</span><span>Вс</span>
+                  </div>
+
+                  <div class="days" data-days></div>
+                </div>
+              </div>
+              <!-- Подсказка -->
+              <div class="archive-hint py-3 px-4 mt-3 d-flex">
+                <div
+                  style="
+                    background-color: rgba(143, 120, 88, 1);
+                    border-radius: 50%;
+                    width: 12px;
+                    height: 12px;
+                    flex-shrink: 0;
+                    transform: translateY(4px);
+                  "
+                  class="dot"
+                ></div>
+                <div style="color: rgba(49, 65, 88, 1)" class="mx-1">
+                  Даты с подчеркиванием содержат новости
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <!-- Кнопка показать больше -->
+        <div class="d-flex justify-content-center mt-4">
+          <button id="showMore" class="btn">
+            <i
+              class="bi bi-arrow-clockwise"
+              style="color: rgba(143, 120, 88, 1)"
+            ></i>
+            Показать больше
+          </button>
+        </div>
+        <!-- Пагинация -->
+        <div class="news-pagination">
+          <button class="active">1</button> <button>2</button>
+          <button>3</button> <button>4</button> <button>5</button>
+          <button>›</button>
+        </div>
+      </div>
+    </section>
+    <script src="js/calendar.js" defer></script>
+  </body>
+</html>

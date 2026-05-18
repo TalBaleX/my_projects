@@ -1,0 +1,63 @@
+.container.bio {
+  width: 70%;
+  display: flex;
+  /* 
+    @include _768 {
+
+    }
+  */
+}
+@media (max-width: 768px) {
+  .container.bio {
+    width: 90%;
+    flex-direction: column;
+  }
+}
+.container.bio div {
+  width: 50%;
+  /* 
+    @include _768 {
+
+    }
+  */
+}
+@media (max-width: 768px) {
+  .container.bio div {
+    width: 100%;
+  }
+}
+.container.bio div .person-image {
+  background-image: url("/images/person.png");
+  width: 90%;
+  border-radius: 2.5rem;
+  margin-top: 5rem;
+  /* 
+    @include _768 {
+
+    }
+  */
+}
+@media (max-width: 768px) {
+  .container.bio div .person-image {
+    width: 100%;
+  }
+}
+.container.bio div .about-text {
+  display: block;
+  font-size: 3rem;
+  /* 
+    @include _768 {
+
+    }
+  */
+}
+@media (max-width: 768px) {
+  .container.bio div .about-text {
+    padding-top: 6rem;
+    font-size: 5rem;
+  }
+}
+.container.bio div .about-text::first-letter {
+  color: rgb(206, 52, 78);
+  font-size: 6rem;
+}/*# sourceMappingURL=about-me.css.map */

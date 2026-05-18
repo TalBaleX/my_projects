@@ -1,0 +1,138 @@
+//@version=5
+indicator("FXSamurai", overlay=true)
+
+// === RSI ===
+rsi(src) =>
+    ta.rsi(src, 14)
+
+// === STC (адаптация твоей логики) ===
+stc(src) =>
+    ema_fast = ta.ema(src, 23)
+    ema_slow = ta.ema(src, 50)
+    macd = ema_fast - ema_slow
+
+    low1 = ta.lowest(macd, 10)
+    high1 = ta.highest(macd, 10)
+    k = 100 * (macd - low1) / (high1 - low1)
+
+    d1 = ta.ema(k, 3)
+
+    low2 = ta.lowest(d1, 10)
+    high2 = ta.highest(d1, 10)
+    k2 = 100 * (d1 - low2) / (high2 - low2)
+
+    ta.ema(k2, 3)
+
+// === PRICE TREND FACTOR ===
+factor_price(h, l, c, weight) =>
+    (h - c > c - l) ? 1 + (0.1*weight) : (h - c < c - l) ? 1-(0.1*weight) : 1.0
+
+// === RSI FACTOR ===
+factor_rsi(r, weight) =>
+    (70 - r > r - 30) ? 1 + (0.1*weight) : (70 - r < r - 30) ? 1-(0.1*weight) : 1.0
+
+// === STC FACTOR ===
+factor_stc(s, weight) =>
+    (75 - s > s - 25) ? 1 + (0.1*weight) : (75 - s < s - 25) ? 1-(0.1*weight) : 1.0
+
+// === MULTI TF DATA ===
+
+// 1m (текущий график должен быть 1m для точности)
+h_1m = high
+l_1m = low
+c_1m = close
+rsi_1m = rsi(close)
+stc_1m = stc(close)
+
+// 5m
+h_5m = request.security(syminfo.tickerid, "5", high)
+l_5m = request.security(syminfo.tickerid, "5", low)
+c_5m = request.security(syminfo.tickerid, "5", close)
+rsi_5m = request.security(syminfo.tickerid, "5", rsi(close))
+stc_5m = request.security(syminfo.tickerid, "5", stc(close))
+
+// 1h
+h_1h = request.security(syminfo.tickerid, "60", high)
+l_1h = request.security(syminfo.tickerid, "60", low)
+c_1h = request.security(syminfo.tickerid, "60", close)
+rsi_1h = request.security(syminfo.tickerid, "60", rsi(close))
+stc_1h = request.security(syminfo.tickerid, "60", stc(close))
+
+// 1w
+h_1w = request.security(syminfo.tickerid, "W", high)
+l_1w = request.security(syminfo.tickerid, "W", low)
+c_1w = request.security(syminfo.tickerid, "W", close)
+rsi_1w = request.security(syminfo.tickerid, "W", rsi(close))
+stc_1w = request.security(syminfo.tickerid, "W", stc(close))
+
+// === COEF ===
+coef = 1.0
+
+coef *= factor_price(h_1w, l_1w, c_1w, 1.5)
+coef *= factor_rsi(rsi_1w, 1.5)
+coef *= factor_stc(stc_1w, 1.5)
+
+coef *= factor_price(h_1h, l_1h, c_1h, 2)
+coef *= factor_rsi(rsi_1h, 2)
+coef *= factor_stc(stc_1h, 2)
+
+coef *= factor_price(h_5m, l_5m, c_5m, 3)
+coef *= factor_rsi(rsi_5m, 3)
+coef *= factor_stc(stc_5m, 3)
+
+coef *= factor_rsi(rsi_1m, 4)
+coef *= factor_stc(stc_1m, 4)
+
+// === STATE ===
+isBuy  = coef < 1
+isSell = coef > 1
+
+// === СМЕНА СЕРИИ (даже если 1 свеча) ===
+buyStart  = isBuy  and isSell[1]   // был SELL → стал BUY
+sellStart = isSell and isBuy[1]    // был BUY → стал SELL
+
+// === ПОДТВЕРЖДЕНИЕ ВТОРОЙ СВЕЧОЙ ===
+buyConfirm  = isBuy  and buyStart[1]  and barstate.isconfirmed
+sellConfirm = isSell and sellStart[1] and barstate.isconfirmed
+
+// === АЛЕРТЫ ===
+alertcondition(buyConfirm, title="BUY (trend start)", 
+     message="FXM BUY after SELL ended {{ticker}} @ {{close}}")
+
+alertcondition(sellConfirm, title="SELL (trend start)", 
+     message="FXM SELL after BUY ended {{ticker}} @ {{close}}")
+
+// === STOP-СИГНАЛЫ (момент окончания серии) ===
+stopSell = buyStart and barstate.isconfirmed   // закончился SELL
+stopBuy  = sellStart and barstate.isconfirmed  // закончился BUY
+
+alertcondition(stopSell, title="STOP SELL", 
+     message="FXM STOP SELL {{ticker}} @ {{close}}")
+
+alertcondition(stopBuy, title="STOP BUY", 
+     message="FXM STOP BUY {{ticker}} @ {{close}}")
+
+// === ВИЗУАЛКА ===
+plotshape(buyConfirm, title="BUY", location=location.belowbar, 
+     color=color.green, style=shape.labelup, text="BUY")
+
+plotshape(sellConfirm, title="SELL", location=location.abovebar, 
+     color=color.red, style=shape.labeldown, text="SELL")
+
+plotshape(stopSell, title="STOP SELL", location=location.belowbar, 
+     color=color.blue, style=shape.circle, size=size.small)
+
+plotshape(stopBuy, title="STOP BUY", location=location.abovebar, 
+     color=color.orange, style=shape.circle, size=size.small)
+
+// === SIGNAL ===
+signal = coef > 1 ? "SELL" : coef < 1 ? "BUY" : "NEUTRAL"
+
+// визуалка
+// label.new(bar_index, high, signal + "\n" + str.tostring(coef, "#.##"), style=label.style_label_down)
+
+// === ЦВЕТ ФОНА ===
+bgcolor(coef > 1 ? color.new(color.red, 85) :
+       coef < 1 ? color.new(color.green, 85) : na)
+// umgekehrt proportional
+
